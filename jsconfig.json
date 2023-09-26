@@ -2,7 +2,8 @@
     "compilerOptions": {
         "paths": {
             "@/*": ["./src/*"],
-            "@pub/*": ["./*"]
+            "@pub/*": ["./*"],
+            "contentlayer/generated": ["./.contentlayer/generated"]
         }
     }
 }

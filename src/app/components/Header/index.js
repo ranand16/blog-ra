@@ -2,7 +2,7 @@ import { GITHUB, LINKED_IN, cn } from "@/utils";
 import { FC } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { Github, LinkedIn } from "../Icons";
+import { Github, GithubIco, LinkedIn, LinkedInIco, SunIco } from "../Icons";
 
 const Header = () => {
     return (
@@ -20,14 +20,24 @@ const Header = () => {
                 <Link className="mr-2" href="/contact">
                     Contact
                 </Link>
-                <button>H</button>
+                <button>
+                    <SunIco />
+                </button>
             </nav>
             <div>
-                <a href={LINKED_IN}>
-                    <LinkedIn />
+                <a href={LINKED_IN} className="inline-block w-6 h-6 mr-4">
+                    <LinkedInIco
+                        className={
+                            "hover:scale-125 transition-all ease duration-100"
+                        }
+                    />
                 </a>
-                <a href={GITHUB}>
-                    <Github />
+                <a href={GITHUB} className="inline-block w-6 h-6 mr-4">
+                    <GithubIco
+                        className={
+                            "hover:scale-125 transition-all ease duration-100"
+                        }
+                    />
                 </a>
             </div>
         </header>
