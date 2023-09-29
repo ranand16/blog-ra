@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.titleunderlineanim {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #7b00d3 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(123 0 211 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #7b00d3 var(--tw-gradient-to-position);
+    background-size: 0px 6px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    transition-property: background-size;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-duration: 500ms;
+}
+
+.titleunderlineanim:hover {
+    background-size: 100% 6px;
+}
