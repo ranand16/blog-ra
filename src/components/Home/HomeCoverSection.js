@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import Tag from "../Elements/Tag";
+import { slug } from "github-slugger";
 
 const HomeCoverSection = ({ blogs }) => {
     const sortedBlogs = sortBlogs(blogs);
@@ -24,7 +25,7 @@ const HomeCoverSection = ({ blogs }) => {
                 <div className="w-3/4 p-16 flex flex-col items-start justify-center z-[11] text-light">
                     <Tag
                         name={blog.tags[0]}
-                        link={`/categories/${blog.tags[0]}`}
+                        link={`/categories/${slug(blog.tags[0])}`}
                     />
                     <Link href={blog.url} className="mt-6 hover:">
                         <h1 className="font-bold capitalize text-4xl ">
