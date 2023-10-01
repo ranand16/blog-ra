@@ -1,4 +1,4 @@
-import { Overlay } from "./../Elements/Overlay";
+import { Overlay } from "../Elements/Overlay";
 import { sortBlogs } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
