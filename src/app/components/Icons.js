@@ -9,7 +9,7 @@ export const GithubIco = ({ className, ...props }) => (
         className={cn(className, "w-full h-auto")}
         {...props}
     >
-        <g fill="#181616">
+        <g>
             <path
                 fillRule="evenodd"
                 d="M21 1.739c-10.942 0-19.815 9.212-19.815 20.577 0 9.091 5.678 16.804 13.55 19.525.99.191 1.354-.446 1.354-.99 0-.49-.018-2.111-.027-3.83-5.512 1.244-6.675-2.428-6.675-2.428-.902-2.379-2.2-3.011-2.2-3.011-1.799-1.277.135-1.25.135-1.25 1.99.144 3.038 2.12 3.038 2.12 1.767 3.145 4.635 2.236 5.766 1.71.177-1.33.691-2.238 1.258-2.752-4.401-.52-9.028-2.284-9.028-10.168 0-2.247.774-4.082 2.042-5.524-.206-.518-.885-2.61.191-5.445 0 0 1.664-.553 5.45 2.11A18.325 18.325 0 0 1 21 11.688c1.683.008 3.38.236 4.963.693 3.782-2.663 5.444-2.11 5.444-2.11 1.079 2.834.4 4.928.195 5.445 1.27 1.442 2.039 3.277 2.039 5.524 0 7.903-4.635 9.643-9.048 10.153.711.638 1.345 1.891 1.345 3.81 0 2.754-.023 4.97-.023 5.647 0 .548.357 1.19 1.36.987 7.87-2.724 13.54-10.434 13.54-19.522 0-11.364-8.872-20.577-19.815-20.577Z"
@@ -46,25 +46,63 @@ export const LinkedInIco = ({ className, ...props }) => (
         </defs>
     </svg>
 );
-
-export const MoonIco = ({ className, ...props }) => (
+export const SunIco = ({ className, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        className={cn(className, "w-full h-auto")}
-        {...props}
+        {...rest}
+        className={cn("w-full h-auto", className)}
     >
-        <path fill="rgba(255, 255, 255, 0)" d="M0 0h24v24H0z" />
-        <g>
+        <rect
+            x="0"
+            y="0"
+            width="24"
+            height="24"
+            fill="rgba(255, 255, 255, 0)"
+        />
+        <g
+            fill="none"
+            stroke="currentColor"
+            strokeDasharray="2"
+            strokeDashoffset="2"
+            strokeLinecap="round"
+            strokeWidth="2"
+        >
+            <path d="M0 0">
+                <animate
+                    fill="freeze"
+                    attributeName="d"
+                    begin="1.2s"
+                    dur="0.2s"
+                    values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1"
+                />
+                <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="1.2s"
+                    dur="0.2s"
+                    values="2;0"
+                />
+            </path>
+            <path d="M0 0">
+                <animate
+                    fill="freeze"
+                    attributeName="d"
+                    begin="1.5s"
+                    dur="0.2s"
+                    values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
+                />
+                <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="1.5s"
+                    dur="1.2s"
+                    values="2;0"
+                />
+            </path>
             <animateTransform
-                fill="none"
-                stroke="currentColor"
-                strokeDasharray={2}
-                strokeDashoffset={2}
-                strokeLinecap="round"
-                strokeWidth={2}
                 attributeName="transform"
                 dur="30s"
                 repeatCount="indefinite"
@@ -73,7 +111,7 @@ export const MoonIco = ({ className, ...props }) => (
             />
         </g>
         <g fill="currentColor">
-            <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81-.91-3.06Z">
+            <path d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
                 <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -81,7 +119,7 @@ export const MoonIco = ({ className, ...props }) => (
                     values="1;0"
                 />
             </path>
-            <path d="M19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17-.59-1.98Z">
+            <path d="M19.61 12.25L21.25 11L19.19 10.95L18.5 9L17.81 10.95L15.75 11L17.39 12.25L16.8 14.23L18.5 13.06L20.2 14.23L19.61 12.25Z">
                 <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -96,14 +134,14 @@ export const MoonIco = ({ className, ...props }) => (
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth="2"
         >
-            <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" />
-            <set attributeName="opacity" begin="0.6s" to={0} />
+            <path d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z" />
+            <set attributeName="opacity" begin="0.6s" to="0" />
         </g>
-        <mask id="a">
-            <circle cx={12} cy={12} r={12} fill="#fff" />
-            <circle cx={18} cy={6} r={12} fill="#fff">
+        <mask id="lineMdMoonFilledToSunnyFilledLoopTransition0">
+            <circle cx="12" cy="12" r="12" fill="#fff" />
+            <circle cx="18" cy="6" r="12" fill="#fff">
                 <animate
                     fill="freeze"
                     attributeName="cx"
@@ -126,7 +164,7 @@ export const MoonIco = ({ className, ...props }) => (
                     values="12;3"
                 />
             </circle>
-            <circle cx={18} cy={6} r={10}>
+            <circle cx="18" cy="6" r="10">
                 <animate
                     fill="freeze"
                     attributeName="cx"
@@ -150,47 +188,73 @@ export const MoonIco = ({ className, ...props }) => (
                 />
             </circle>
         </mask>
+        <circle
+            cx="12"
+            cy="12"
+            r="10"
+            fill="currentColor"
+            mask="url(#lineMdMoonFilledToSunnyFilledLoopTransition0)"
+            opacity="0"
+        >
+            <set attributeName="opacity" begin="0.6s" to="1" />
+            <animate
+                fill="freeze"
+                attributeName="r"
+                begin="0.6s"
+                dur="0.4s"
+                values="10;6"
+            />
+        </circle>
     </svg>
 );
 
-export const SunIco = ({ className, ...props }) => (
+export const MoonIco = ({ className, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        className={cn(className, "w-full h-auto")}
-        {...props}
+        {...rest}
+        className={cn("w-full h-auto", className)}
     >
         <g
             fill="none"
             stroke="currentColor"
-            strokeDasharray={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth="2"
         >
-            <path d="M12 21v1m9-10h1M12 3V2M3 12H2">
-                <animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    dur="0.2s"
-                    values="4;2"
-                />
-            </path>
-            <path d="m18.5 18.5.5.5m-.5-13.5L19 5m-13.5.5L5 5m.5 13.5L5 19">
-                <animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="0.2s"
-                    dur="0.2s"
-                    values="4;2"
-                />
+            <g strokeDasharray="2">
+                <path d="M12 21v1M21 12h1M12 3v-1M3 12h-1">
+                    <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.2s"
+                        values="4;2"
+                    />
+                </path>
+                <path d="M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5">
+                    <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.2s"
+                        dur="0.2s"
+                        values="4;2"
+                    />
+                </path>
+            </g>
+            <path
+                fill="currentColor"
+                d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"
+                opacity="0"
+            >
+                <set attributeName="opacity" begin="0.5s" to="1" />
             </path>
         </g>
-        <g fill="none" fillOpacity={0}>
-            <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81z">
+        <g fill="currentColor" fillOpacity="0">
+            <path d="m15.22 6.03l2.53-1.94L14.56 4L13.5 1l-1.06 3l-3.19.09l2.53 1.94l-.91 3.06l2.63-1.81l2.63 1.81z">
                 <animate
+                    id="lineMdSunnyFilledLoopToMoonFilledLoopTransition0"
                     fill="freeze"
                     attributeName="fill-opacity"
                     begin="0.6s;lineMdSunnyFilledLoopToMoonFilledLoopTransition0.begin+6s"
@@ -205,7 +269,7 @@ export const SunIco = ({ className, ...props }) => (
                     values="1;0"
                 />
             </path>
-            <path d="M13.61 5.25 15.25 4l-2.06-.05L12.5 2l-.69 1.95L9.75 4l1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17z">
+            <path d="M13.61 5.25L15.25 4l-2.06-.05L12.5 2l-.69 1.95L9.75 4l1.64 1.25l-.59 1.98l1.7-1.17l1.7 1.17z">
                 <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -221,7 +285,7 @@ export const SunIco = ({ className, ...props }) => (
                     values="1;0"
                 />
             </path>
-            <path d="M19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17z">
+            <path d="M19.61 12.25L21.25 11l-2.06-.05L18.5 9l-.69 1.95l-2.06.05l1.64 1.25l-.59 1.98l1.7-1.17l1.7 1.17z">
                 <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -237,7 +301,7 @@ export const SunIco = ({ className, ...props }) => (
                     values="1;0"
                 />
             </path>
-            <path d="m20.828 9.731 1.876-1.439-2.366-.067L19.552 6l-.786 2.225-2.366.067 1.876 1.439L17.601 12l1.951-1.342L21.503 12z">
+            <path d="m20.828 9.731l1.876-1.439l-2.366-.067L19.552 6l-.786 2.225l-2.366.067l1.876 1.439L17.601 12l1.951-1.342L21.503 12z">
                 <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -254,9 +318,9 @@ export const SunIco = ({ className, ...props }) => (
                 />
             </path>
         </g>
-        <mask id="a">
-            <circle cx={12} cy={12} r={12} fill="#fff" />
-            <circle cx={22} cy={2} r={3} fill="#fff">
+        <mask id="lineMdSunnyFilledLoopToMoonFilledLoopTransition1">
+            <circle cx="12" cy="12" r="12" fill="#fff" />
+            <circle cx="22" cy="2" r="3" fill="#fff">
                 <animate
                     fill="freeze"
                     attributeName="cx"
@@ -279,7 +343,7 @@ export const SunIco = ({ className, ...props }) => (
                     values="3;12"
                 />
             </circle>
-            <circle cx={22} cy={2} r={1}>
+            <circle cx="22" cy="2" r="1">
                 <animate
                     fill="freeze"
                     attributeName="cx"
@@ -303,8 +367,14 @@ export const SunIco = ({ className, ...props }) => (
                 />
             </circle>
         </mask>
-        <circle cx={12} cy={12} r={6} fill="currentColor" mask="url(#a)">
-            <set attributeName="opacity" begin="0.5s" to={0} />
+        <circle
+            cx="12"
+            cy="12"
+            r="6"
+            fill="currentColor"
+            mask="url(#lineMdSunnyFilledLoopToMoonFilledLoopTransition1)"
+        >
+            <set attributeName="opacity" begin="0.5s" to="0" />
             <animate
                 fill="freeze"
                 attributeName="r"
