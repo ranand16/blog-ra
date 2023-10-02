@@ -1,3 +1,5 @@
+"use client";
+
 import { TableOfContents } from "./../../../components/Blog/TableOfContents";
 import BlogDetails from "@/components/Blog/BogDetails";
 import RenderMdx from "@/components/Blog/RenderMdx";
@@ -5,11 +7,17 @@ import Tag from "@/components/Elements/Tag";
 import { allBlogs } from "@pub/.contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
+import { useState } from "react";
+
+export async function generateStaticParams() {
+    return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+}
 
 export default function BlogPage({ params }) {
     const blog = allBlogs.find(
         (blog) => blog._raw.flattenedPath == params.slug
     );
+    const [showTOC, setShowTOC] = useState(true);
     return (
         <article>
             <div className="mb-8 text-center relative h-[70vh] bg-dark w-full">
@@ -36,8 +44,8 @@ export default function BlogPage({ params }) {
             </div>
             <BlogDetails blog={blog} slug={params.slug} />
             <div className="grid grid-cols-12 gap-16 mt-8 px-10 ">
-                <TableOfContents blog={blog} />
-                <RenderMdx blog={blog} />
+                <TableOfContents blog={blog} showTOC={showTOC} />
+                <RenderMdx blog={blog} showTOC={showTOC} />
             </div>
         </article>
     );

@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="mt-5 px-4 text-center w-3/5 font-light text-base">
                 Subscribe to learn about new technology and updates. Join over
                 5000+ members community to stay up to date with latest news. ©
-                2023 CodeBucks. All rights reserved.
+                2023 Rishabh Anand. All rights reserved.
             </p>
             <form
                 className="mt-6 min-w-[384px] flex items-stretch bg-light p-2 rounded mx-4"

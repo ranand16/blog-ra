@@ -1,9 +1,9 @@
 "use client";
 
-export function TableOfContents({ blog }) {
+export function TableOfContents({ blog, showTOC }) {
     return (
-        <div className="col-span-4">
-            <details>
+        <div className={`${showTOC ? "col-span-2" : "hidden"}`}>
+            <details open>
                 <summary>Table Of Contents</summary>
                 <ul>
                     {blog.toc.map((heading) => {
