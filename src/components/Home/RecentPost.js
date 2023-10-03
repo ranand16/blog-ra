@@ -20,7 +20,7 @@ const RecentPosts = ({ blogs }) => {
                 </Link>
             </div>
             <div className="grid grid-cols-3 grid-rows-2 gap-16 mt-16">
-                {sortedBlogs.slice(5, 11).map((b) => {
+                {sortedBlogs.slice(4, 10).map((b) => {
                     return (
                         <article
                             key={b.id}

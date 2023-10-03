@@ -8,8 +8,7 @@ import { slug } from "github-slugger";
 
 const HomeCoverSection = ({ blogs }) => {
     const sortedBlogs = sortBlogs(blogs);
-    const blog = sortedBlogs[4];
-    console.log("🚀HomeCoverSection blog:", blog.image);
+    const blog = sortedBlogs[0];
     return (
         <div className="w-full inline-block">
             <article className="flex flex-col items-start justify-end mx-10 relative h-[85vh] ">
