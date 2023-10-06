@@ -1,11 +1,14 @@
-import { GITHUB, LINKED_IN, cn } from "@/utils";
+"use client";
+import { cn } from "@/utils";
 import { FC } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { Github, GithubIco, LinkedIn, LinkedInIco, SunIco } from "../Icons";
+import { GithubIco, LinkedInIco, SunIco } from "../Icons";
 import siteMetadata from "@/utils/siteMetaData";
+import useThemeSwitch from "../Hooks/useThemeHook";
 
 const Header = () => {
+    const [mode, setMode] = useThemeSwitch();
     return (
         <header
             className={cn("w-full p-4 px-10 flex items-center justify-between")}
@@ -21,7 +24,9 @@ const Header = () => {
                 <Link className="mr-2" href="/contact">
                     Contact
                 </Link>
-                <button>
+                <button
+                    onClick={() => setMode(mode === "light" ? "dark" : "light")}
+                >
                     <SunIco />
                 </button>
             </nav>
