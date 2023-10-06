@@ -1,6 +1,12 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import LottieAnimation from "@/components/Contact/LottieAnimation";
+import siteMetadata from "@/utils/siteMetaData";
 import { FC } from "react";
+
+export const metadata = {
+    title: "Contact Me",
+    description: `Contact me through the form or email me at ${siteMetadata.email}`,
+};
 
 const Contact = () => {
     return (

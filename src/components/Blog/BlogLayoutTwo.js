@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogLayoutTwo = ({ blog }) => {
-    console.log("🚀 BlogLayoutTwo", blog);
     return (
         <div className="group grid grid-cols-12 gap-4 items-center text-dark">
             <Link

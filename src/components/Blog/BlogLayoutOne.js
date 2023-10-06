@@ -6,7 +6,6 @@ import Tag from "../Elements/Tag";
 import { format } from "date-fns";
 
 const BlogLayoutOne = ({ blog }) => {
-    console.log("🚀 BlogLayoutOne", blog);
     return (
         <div className="group inline-block overflow-hidden rounded-xl">
             <Overlay />

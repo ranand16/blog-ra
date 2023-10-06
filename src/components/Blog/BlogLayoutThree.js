@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogLayoutThree = ({ blog }) => {
-    console.log("🚀 BlogLayoutThree", blog);
     return (
         <div className="group flex flex-col items-center  text-dark">
             <Link href={blog.url} className="h-full rounded-xl overflow-hidden">

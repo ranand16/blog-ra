@@ -7,10 +7,6 @@ export function TableOfContents({ blog, showTOC }) {
                 <summary>Table Of Contents</summary>
                 <ul>
                     {blog.toc.map((heading) => {
-                        console.log(
-                            "🚀 ~ file: TableOfContents.js:8 ~ {BlogDetails.toc.map ~ heading:",
-                            heading
-                        );
                         return (
                             <li key={heading.slug} className="py-1">
                                 <a

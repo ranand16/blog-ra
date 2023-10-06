@@ -13,6 +13,3 @@ export function sortBlogs(blogs) {
             compareDesc(parseISO(a.publishedAt), parseISO(b.publihsedAt))
         );
 }
-
-export const LINKED_IN = "https://www.linkedin.com/in/rishabh-anand-8b3b8197/";
-export const GITHUB = "https://github.com/ranand16";

@@ -3,6 +3,7 @@ import { FC } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { Github, GithubIco, LinkedIn, LinkedInIco, SunIco } from "../Icons";
+import siteMetadata from "@/utils/siteMetaData";
 
 const Header = () => {
     return (
@@ -25,14 +26,20 @@ const Header = () => {
                 </button>
             </nav>
             <div>
-                <a href={LINKED_IN} className="inline-block w-6 h-6 mr-4">
+                <a
+                    href={siteMetadata.linkedin}
+                    className="inline-block w-6 h-6 mr-4"
+                >
                     <LinkedInIco
                         className={
                             "hover:scale-125 transition-all ease duration-100"
                         }
                     />
                 </a>
-                <a href={GITHUB} className="inline-block w-6 h-6 mr-4">
+                <a
+                    href={siteMetadata.github}
+                    className="inline-block w-6 h-6 mr-4"
+                >
                     <GithubIco
                         className={
                             "hover:scale-125 transition-all ease duration-100"
