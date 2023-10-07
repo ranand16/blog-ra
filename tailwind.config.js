@@ -11,8 +11,8 @@ module.exports = {
             colors: {
                 dark: "#1b1b1b",
                 light: "#fff",
-                accent: "#00B3A6",
-                accentDark: "#ffdb4d",
+                accent: "var(--accent)",
+                accentDark: "var(--accentDark)",
                 gray: "#747474",
             },
             fontFamily: {
@@ -27,6 +27,10 @@ module.exports = {
                     "0%": { transform: "translateX(100%)" },
                     "100%": { transform: "translateX(-100%)" },
                 },
+            },
+            screens: {
+                sxl: "1180px",
+                xs: "480px",
             },
         },
     },

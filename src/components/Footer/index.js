@@ -18,10 +18,10 @@ const Footer = () => {
     return (
         <footer
             className={cn(
-                "mt-16rounded-2xl m-10 bg-dark flex flex-col items-center text-light "
+                "mt-16 rounded-2xl m-10 bg-dark dark:bg-accentDark flex flex-col items-center text-light dark:text-dark "
             )}
         >
-            <h3 className="mt-16 font-medium text-center text-4xl px-4 capitalize">
+            <h3 className="mt-16 font-medium dark:font-bold text-center text-2xl sm:text-3xl lg:text-4xl px-4 capitalize">
                 Interesting Stories | Updates | Guides
             </h3>
             <p className="mt-5 px-4 text-center w-3/5 font-light text-base">

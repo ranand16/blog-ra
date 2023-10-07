@@ -18,14 +18,14 @@ const BlogLayoutOne = ({ blog }) => {
                 width={blog.image.width}
                 className="w-full h-full object-center object-cover rounded-3xl group-hover:scale-105 transition-all ease duration-300"
             />
-            <div className="absolute bottom-0 p-10 z-20 w-full ">
+            <div className="absolute bottom-0 p-6 xs:p-4 sm:p-10  z-20 w-full ">
                 <Tag
                     name={blog.tags[0]}
                     link={`/categories/${blog.tags[0]}`}
-                    className={"px-6 text-sm py-2 !border"}
+                    className={"px-6 text-xs sm:text-sm py-1 sm:py-2 !border"}
                 />
                 <Link href={blog.url} className="mt-6">
-                    <h2 className="font-bold capitalize text-2xl text-light mt-4 ">
+                    <h2 className="font-bold capitalize text-sm xs:text-base sm:text-2xl md:text-2xl text-light mt-2 sm:mt-4 ">
                         <span className={"titleunderlineanim"}>
                             {blog.title}
                         </span>

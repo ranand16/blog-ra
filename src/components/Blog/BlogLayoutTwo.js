@@ -1,13 +1,14 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { format } from "date-fns";
 
 const BlogLayoutTwo = ({ blog }) => {
     return (
-        <div className="group grid grid-cols-12 gap-4 items-center text-dark">
+        <div className="group grid grid-cols-12 gap-4 items-center text-dark dark:text-light">
             <Link
                 href={blog.url}
-                className="col-span-4 h-full rounded-xl overflow-hidden"
+                className="col-span-12 lg:col-span-4 h-full rounded-xl overflow-hidden"
             >
                 <Image
                     src={blog.image.filePath.replace("../public", "")}
@@ -19,17 +20,20 @@ const BlogLayoutTwo = ({ blog }) => {
                     className="aspect-square w-full h-full object-cover object-center group-hover:scale-105 transition-all ease duration-300"
                 />
             </Link>
-            <div className="col-span-8 w-full">
-                <span className="uppercase text-accent font-semibold text-sm ">
+            <div className="col-span-12 lg:col-span-8 w-full">
+                <span className="inline-block w-full uppercase text-accent dark:text-accentDark font-semibold tet-xs sm:text-sm ">
                     {blog.tags[0]}
                 </span>
                 <Link href={blog.url} className="inline-block my-1">
-                    <h2 className="font-semibold capitalize text-lg">
+                    <h2 className="font-semibold capitalize text-base sm:text-lg">
                         <span className={"titleunderlineanim"}>
                             {blog.title}
                         </span>
                     </h2>
                 </Link>
+                <span className="inline-block w-full capitalize text-dark/50 dark:text-light/50 font-semibold  text-sm sm:text-base">
+                    {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
+                </span>
             </div>
         </div>
     );
