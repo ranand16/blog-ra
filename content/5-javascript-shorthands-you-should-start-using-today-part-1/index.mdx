@@ -1,0 +1,196 @@
+---
+title: "5 javascript shorthands you should start using today - part 1"
+description: 5 lesser known js shorthands you should be using.
+updatedAt: "2022-08-21"
+publishedAt: "2020-08-21"
+image: "../../public/blogs/post_4/post_4_thumbnail.png"
+author: "Rishabh Anand"
+tags:
+    - javascript
+    - react
+    - shorthands
+---
+
+# 5 Javascript shorthands you should start using today - part 1
+
+## 1. Make use of _Truthy_ value
+
+In javascript you have an option to remove _equality operator_ by using the truthy values in relevant conditions.
+
+Longhand ❌:
+
+```js
+if (variable === true) {
+    // code goes here
+}
+```
+
+If the value of `variable` here is any of the truthy values, we need not use the quality operator at all.
+
+Shorthand ✅:
+
+```js
+if (variable) {
+    // code goes here
+}
+```
+
+> Please refer this link for all truthy values: [All Truthy values](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+
+## 2. Short-circuit logical operator
+
+When we could do something in just a line using _logical operator_ why waste n lines for same.
+
+Longest ❌:
+
+```js
+let port;
+if (process.env.PORT) {
+    port = process.env.PORT;
+} else {
+    port = 3000;
+}
+```
+
+Long ❌:
+
+```js
+let port = 3000;
+if (process.env.PORT) {
+    port = process.env.PORT;
+}
+```
+
+Shorthand ✅:
+
+```js
+const port = process.env.PORT || 3000;
+```
+
+## 3. Arrow functions
+
+Longhand ❌:
+
+```js
+function helloWorld(name) {
+    console.log("Hello", name);
+}
+
+setTimeout(function () {
+    console.log("Loaded");
+}, 2000);
+
+names.forEach(function (name) {
+    console.log(name);
+});
+```
+
+Shorthand ✅:
+
+```js
+helloWorld = (name) => console.log("Hello", name);
+
+setTimeout(() => console.log("Loaded"), 2000);
+
+names.forEach((name) => console.log(name));
+```
+
+## 4. Spread Operator Shorthand
+
+Longhand ❌:
+
+```js
+// Shallow merge objects
+const name = { "first": "Virat", "last": "Kohli" };
+const addr = { "floor": "4th", "street": "Chaploon street" };
+const details = Object.assign({}, name, addr, ...);
+
+// joining 2 arrays
+const fibo1 = [1, 1, 2, 3];
+const nacci1 = [5, 8, 13].concat(fibo1);
+
+// cloning 2 arrays
+const fibo2 = [1, 1, 2, 3];
+const nacci2 = [5, 8, 13].slice()
+```
+
+Shorthand ✅:
+
+```js
+// joining 2 arrays
+const fibo1 = [1, 1, 2, 3];
+const nacci1 = [...fibo1, 5, 8, 13];
+console.log(nacci1); // [ 2, 4, 6, 1, 3, 5 ]
+
+// cloning 2 arrays
+const arr = [1, 2, 3, 4];
+const arr2 = [...arr];
+```
+
+## 5. The mighty Ternary operator
+
+Why write multiple lines of conditional code if you could just do it in one line using ternary operators.
+
+Longhand ❌:
+
+```js
+let info;
+if (value < 10) {
+    info = "Value is too small";
+} else if (value > 20) {
+    info = "Value is too large";
+} else {
+    info = "Value is in range";
+}
+```
+
+A concise `if-else` condition
+Shorthand ✅:
+
+```js
+const info =
+    value < 10
+        ? "Value is too small"
+        : value > 20
+        ? "Value is too large"
+        : "Value is in range";
+```
+
+Beatified Shorthand ✅✅:
+
+```js
+const info =
+    value < 10
+        ? "Value is too small"
+        : value > 20
+        ? "Value is too large"
+        : "Value is in range";
+```
+
+But many times we have to _call functions_ in if-else conditions, what do we do there?
+
+```js
+Longhand ❌:
+if (condition) {
+  f1();
+} else {
+  f2();
+}
+```
+
+```js
+Shorthand ✅:
+(condition ? f1 : f2)(); // this is a way that can fetch you a offer letter in an interview.
+```
+
+Check the same code here [Codesandbox]()
+
+That was all folks 😎! We will continue with some more interesting shorthands and tricks in the next one.
+
+Do share this with your friends and colleagues.
+
+Want to see what I am working on? [Github](https://github.com/ranand16)
+
+Want to connect? Reach out to me on [Linkedin](https://www.linkedin.com/in/rishabh-anand-8b3b8197/)
+
+Follow me on [Instagram](https://www.instagram.com/indian_soya_bean/) to check out what I am up to.

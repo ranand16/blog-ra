@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "@/utils/siteMetaData";
 import ThemeScript from "@/components/ThemeScript";
+import { allBlogs } from "contentlayer/generated";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -55,6 +56,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    console.log("🚀 ~ file: layout.js:9 ~ allBlogs:", allBlogs);
+
     return (
         <html lang="en">
             <body

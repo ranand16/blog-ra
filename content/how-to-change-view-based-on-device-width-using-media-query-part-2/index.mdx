@@ -1,0 +1,124 @@
+---
+title: "How to change view based on device width using media query? - part 2"
+description: Here you will learn how to manipulate stylings depending upon device orientation, print and lesser used ones.
+publishedAt: "2017-07-25"
+updatedAt: "2020-07-25"
+image: "../../public/blogs/post_3/post_3_thumbnail.png"
+author: "Rishabh Anand"
+tags:
+    - media-query
+    - css
+---
+
+This is part 2 of the media query series.
+Here we will be discussing about orientation and print.
+
+Let's have a basic html template here.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Static Template</title>
+        <style>
+            /* Stylings goes here  */
+        </style>
+    </head>
+    <body>
+        <!-- Body content goes here -->
+    </body>
+</html>
+```
+
+## 1. Orientation
+
+Here background color changes to lightgreen when the screen orientation is portrait(height of screen is greater than width). This can be used to manipulate stylings for mobile screen as it has height greater than width.
+
+```html {9-14,18}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Orientation</title>
+        <style>
+            /* 1. Orientation media query  */
+            @media only screen and (orientation: portrait) {
+                body {
+                    background-color: lightseagreen;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        Thie background color will change when you change the screen
+        orientation.
+    </body>
+</html>
+```
+
+## 2. Print
+
+Here I am displaying some content on the page only while printing. We will be using `@media print` keyword to define media query for same.
+To see the output you will need to give the print command on your browser and see the print output.
+
+### Use cases for print:
+
+1. 1 - You would use print when you want some elements on the page not to be printed. Probably those elements can be header, footer or any other element.
+2. 2 - One more use case could be when an airline company would also want some extra advertisment on a ticket when you print it.
+
+There still might be many use cases left out which we can discuss later.
+
+```html {16-25, 30-32}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Print</title>
+        <style>
+            /* 1. Orientation media query  */
+            @media only screen and (orientation: portrait) {
+                body {
+                    background-color: lightseagreen;
+                }
+            }
+
+            /* 2. Print media query example  */
+            .onlyOnPrint {
+                display: none;
+            }
+            @media print {
+                /* All your print styles go here */
+                .onlyOnPrint {
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        Thie background color will change when you change the screen
+        orientation.
+        <p class="onlyOnPrint">Will be displayed only while printing</p>
+    </body>
+</html>
+```
+
+This does not end here, there are still alot to discuss on media queries.
+
+Here is a link to learn more about media queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+Check the same code here [Codesandbox](https://codesandbox.io/s/clever-swanson-341tsf?file=/index.html)
+
+That was all folks 😎!
+Do share this with your friends and colleagues.
+
+Want to see what I am working on? [Github](https://github.com/ranand16)
+
+Want to connect? Reach out to me on [Linkedin](https://www.linkedin.com/in/rishabh-anand-8b3b8197/)
+
+Follow me on [Instagram](https://www.instagram.com/indian_soya_bean/) to check out what I am up to.

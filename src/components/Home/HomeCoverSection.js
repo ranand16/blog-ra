@@ -8,6 +8,10 @@ import { slug } from "github-slugger";
 
 const HomeCoverSection = ({ blogs }) => {
     const sortedBlogs = sortBlogs(blogs);
+    console.log(
+        "🚀 ~ file: HomeCoverSection.js:11 ~ HomeCoverSection ~ sortedBlogs:",
+        sortedBlogs
+    );
     const blog = sortedBlogs[0];
     return (
         <div className="w-full inline-block">

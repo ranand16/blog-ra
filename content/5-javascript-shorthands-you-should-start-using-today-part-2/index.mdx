@@ -1,0 +1,196 @@
+---
+title: "5 javascript shorthands you should start using today - part 2"
+description: 5 lesser known js shorthands you should be using.
+publishedAt: "2020-08-23"
+updatedAt: "2022-08-23"
+image: "../../public/blogs/post_5/post_5_thumbnail.png"
+author: "Rishabh Anand"
+tags:
+    - javascript
+    - react
+    - shorthands
+---
+
+# 5 Javascript shorthands you should start using today - part 2
+
+Today is all about arrays in javascript. Some mistakes, some tweaks and some solutions for you today.
+
+## 1. ~~Switch cases~~ Arrays
+
+In this example our ultimate goal is to return the day's name depending on the `dayNumber` we get.
+
+Longhand ❌:
+
+```js
+const dayNumber = new Date().getDay();
+let day;
+switch (dayNumber) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+}
+```
+
+Shorthand ✅:
+
+```js
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+];
+const day = days[dayNumber];
+```
+
+## 2. Find in Arrays
+
+Let's remove weekends from a week and try to find it in the array.
+
+Longhand ❌:
+
+```js
+const isDay = (day) => {
+  if (
+    day === "Monday"
+    day === "Tuesday"
+    day === "Wednesday"
+    day === "Thursday"
+    day === "Friday"
+  ) {
+    return true;
+  }
+  return false;
+};
+```
+
+Shorthand ✅:
+
+```js
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const isVowel = (day) => days.includes(day);
+```
+
+2 benefits:
+
+-   You remove static written `if` block and replace it with an array, which is more dynamic(you just need to add a new value for check).
+-   You make your code less crowded and more clear with the shorthand. THe credit goes to `.includes()`.
+
+## 3. `For-of` and `For-in` loops
+
+Here we will talk about traversing thorugh array and an JSON(Object).
+
+## `For-of`
+
+Longhand ❌:
+
+```js
+for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    // ...
+}
+```
+
+-   Here we have un-necessary `let` declaration which takes up some memory of the pc, which is bad if we follow this syntax multiple times.
+
+Shorthand ✅:
+
+```js
+for (const element of arr) {
+    // ...
+}
+```
+
+-   Here we have eliminate `let` declaration.
+-   We also make the code less noisy and logical.
+
+## `For-in`
+
+Longhand ❌:
+
+```js
+const keys = Object.keys(obj);
+for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const value = obj[key];
+    // ...
+}
+```
+
+Shorthand ✅:
+
+```js
+for (const key in obj) {
+    const value = obj[key];
+    // ...
+}
+```
+
+-   Similar benefits to the For-of.
+
+## 4. Multple values in one line
+
+let num1, num2;
+
+Longhand ❌:
+
+```js
+num1 = 10;
+num2 = 100;
+```
+
+Shorthand ✅:
+
+```js
+[num1, num2] = [10, 100];
+```
+
+## 5. Swap two variables in one line
+
+let x = 1;
+let y = 2;
+Longhand ❌:
+
+```js
+let temp = x;
+x = y;
+y = temp;
+```
+
+Shorthand ✅:
+
+```js
+[x, y] = [y, x];
+```
+
+Check the same code here [Codesandbox]()
+
+That was all folks 😎! We will continue with some more interesting shorthands and tricks in the next one.
+
+Do share this with your friends and colleagues.
+
+Want to see what I am working on? [Github](https://github.com/ranand16)
+
+Want to connect? Reach out to me on [Linkedin](https://www.linkedin.com/in/rishabh-anand-8b3b8197/)
+
+Follow me on [Instagram](https://www.instagram.com/indian_soya_bean/) to check out what I am up to.

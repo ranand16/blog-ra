@@ -1,0 +1,137 @@
+---
+title: "How to change view based on device width using media query? - part 1"
+description: Here you will learn how to manipulate stylings depending upon device width.
+publishedAt: "2017-07-23"
+updatedAt: "2020-07-23"
+image: "../../public/blogs/post_2/post_2_thumbnail.png"
+author: "Rishabh Anand"
+tags:
+    - media-query
+    - css
+---
+
+In real world while developing an application which is meant for wide range of devices rangin from a mobile phone to large desktops, you will definetly need to create UI for each of them.
+
+To help you with that here comes media query in css.
+You can use the `@media` keyword as syntax followed by () symbols (opening and closing brackets).
+There are 2 more things that enhance your media qiery are: [**Media type**](https://www.w3.org/TR/mediaqueries-4/#media-type) and [**Media Feature**](https://www.w3.org/TR/mediaqueries-4/#media-feature)
+
+Here we will be discussing about managing UI designs depending on widths which is just one aspect of media query. We can use media query for some other complex problems as well which we will talk later, lets focus on screen widths as of now.
+
+## 1. Range of widths
+
+Here is a aqua color recepie. We need to have a red color recepie for screen ranging from 800px to 1000px.
+
+Before:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Recepie</title>
+        <style>
+            .recepie {
+                color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="recepie">Indian Soya Bean</h1>
+    </body>
+</html>
+```
+
+After:
+
+```html {13-17}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Recepie</title>
+        <style>
+            /* 1. Range of widths */
+            .recepie {
+                color: aqua;
+            }
+            @media (min-width: 800px) and (max-width: 1000px) {
+                .recepie {
+                    color: red;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="recepie">Indian Soya Bean</h1>
+        <code>highlighted</code>
+    </body>
+</html>
+```
+
+### Definitions:
+
+-   **screen**: I is a [media type](https://www.w3.org/TR/mediaqueries-4/#media-type). There are quite some media types which we can discuss in our future talks
+-   **only**: The only keyword is used to prevent older browsers that do not support media queries with media features from applying the specified styles.
+
+## 2. Using minimum width and maximum width media query
+
+Here we give a font size of 80px to recepie for width above 600px. We also want the font size to be 30px for screen size 600px and below.
+For doing this we add new class recepie-font to the recepie text.
+
+```html {21-32,36}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Static Template</title>
+        <style>
+            /* 1. Range of widths */
+            .recepie {
+                color: aqua;
+            }
+            @media (min-width: 800px) and (max-width: 1000px) {
+                .recepie {
+                    color: red;
+                }
+            }
+
+            /* 2. Minimum and Maximum widths */
+            /* If the screen size is 601px or more, set the font-size of h1 tag to 80px */
+            @media only screen and (min-width: 601px) {
+                .recepie-font {
+                    font-size: 80px;
+                }
+            }
+
+            /* If the screen size is 600px or less, set the font-size of h1 tag to 30px */
+            @media only screen and (max-width: 600px) {
+                .recepie-font {
+                    font-size: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="recepie recepie-font">Indian Soya Bean</h1>
+    </body>
+</html>
+```
+
+Here is a link to learn more about this CSS property: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+Check the same code here [Codesandbox](https://codesandbox.io/s/quizzical-jones-st1h97?file=/index.html)
+
+That was all folks 😎!
+Do share this with your friends and colleagues.
+
+Want to see what I am working on? [Github](https://github.com/ranand16)
+
+Want to connect? Reach out to me on [Linkedin](https://www.linkedin.com/in/rishabh-anand-8b3b8197/)
+
+Follow me on [Instagram](https://www.instagram.com/indian_soya_bean/) to check out what I am up to.

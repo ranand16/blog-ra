@@ -1,0 +1,130 @@
+---
+title: "How to center contents in HTML?"
+description: Everything you need to know about centering things in web.
+publishedAt: "2017-11-19"
+updatedAt: "2020-07-17"
+image: "../../public/blogs/post_1/post_1_thumbnail.png"
+author: "Rishabh Anand"
+tags:
+    - media-query
+    - css
+---
+
+## 1. Text Centering using text-align: center
+
+Let's finish this one quickly because this one is really simple and most of us are already this.
+
+Here is a recepie
+
+```html
+<p>Indian Soya Bean</p>
+```
+
+Here is centered recepie
+
+```html
+<p class="text-center">Indian Soya Bean</p>
+```
+
+```css
+.text-center {
+    text-align: center;
+}
+```
+
+Here is a link to learn more about this CSS property: https://www.w3schools.com/cssref/pr_text_text-align.ASP
+
+## 2. Centering absolute elements
+
+```html
+<p
+    style="
+      position: relative;
+      height: 500px;
+      background-color: rgb(152, 194, 194);
+    "
+>
+    <img
+        width="200px"
+        class="absolute-center"
+        src="https://humornama.com/wp-content/uploads/2021/11/Jethalal-Looking-From-Window-Meme-Template-on-TMKOC-608x365.jpg"
+        alt="indian soya bean"
+    />
+</p>
+```
+
+```css
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(x-axis, y-axis); */
+    transform: translate(-50%, -50%);
+}
+
+/* just for centering horizontally */
+.absolute-horizontal-center {
+    position: absolute;
+    /* top: 50%;  not needed for horizontal centering */
+    left: 50%;
+    transform: translateX(-50%);
+    /* OR */
+    /* transform: translate(-50%, 0%); */
+}
+```
+
+## 3. Centering using Flex
+
+```html
+<p class="flex-center">
+    <img
+        width="200px"
+        height="200px"
+        src="https://humornama.com/wp-content/uploads/2021/11/Jethalal-Looking-From-Window-Meme-Template-on-TMKOC-608x365.jpg"
+        alt="indian soya bean"
+    />
+</p>
+```
+
+```css
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 500px;
+    background-color: rgb(80, 62, 184);
+}
+```
+
+## 4. Centering using margin
+
+```html
+<div>
+    <img
+        class="margin-center"
+        width="200px"
+        height="200px"
+        src="https://humornama.com/wp-content/uploads/2021/11/Jethalal-Looking-From-Window-Meme-Template-on-TMKOC-608x365.jpg"
+        alt="indian soya bean"
+    />
+</div>
+```
+
+```css
+.margin-center {
+    margin: 0 auto;
+}
+```
+
+Check the same code here [Codesandbox](https://codesandbox.io/s/wild-surf-pv945e?file=/index.html:1331-1600)
+
+That was all folks 😎!
+
+Do share this with your friends and colleagues.
+
+Want to see what I am working on? [Github](https://github.com/ranand16)
+
+Want to connect? Reach out to me on [Linkedin](https://www.linkedin.com/in/rishabh-anand-8b3b8197/)
+
+Follow me on [Instagram](https://www.instagram.com/indian_soya_bean/) to check out what I am up to.
