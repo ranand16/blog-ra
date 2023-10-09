@@ -3,7 +3,7 @@ import { cn } from "@/utils";
 import { FC, useState } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { GithubIco, LinkedInIco, SunIco } from "../Icons";
+import { GithubIco, LinkedInIco, MoonIco, SunIco } from "../Icons";
 import siteMetadata from "@/utils/siteMetaData";
 import useThemeSwitch from "../Hooks/useThemeHook";
 
@@ -72,9 +72,19 @@ const Header = () => {
                     Contact
                 </Link>
                 <button
+                    className={cn(
+                        "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
+                        mode == "light"
+                            ? "bg-dark text-light"
+                            : "bg-light text-dark"
+                    )}
                     onClick={() => setMode(mode === "light" ? "dark" : "light")}
                 >
-                    <SunIco />
+                    {mode == "light" ? (
+                        <MoonIco className={"fill-dark"} />
+                    ) : (
+                        <SunIco className={"fill-dark"} />
+                    )}
                 </button>
             </nav>
 
@@ -89,9 +99,19 @@ const Header = () => {
                     Contact
                 </Link>
                 <button
+                    className={cn(
+                        "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
+                        mode == "light"
+                            ? "bg-dark text-light"
+                            : "bg-light text-dark"
+                    )}
                     onClick={() => setMode(mode === "light" ? "dark" : "light")}
                 >
-                    <SunIco />
+                    {mode == "light" ? (
+                        <MoonIco className={"fill-dark"} />
+                    ) : (
+                        <SunIco className={"fill-dark"} />
+                    )}
                 </button>
             </nav>
             <div className="hidden sm:flex items-center">

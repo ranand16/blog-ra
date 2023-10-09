@@ -17,6 +17,7 @@ const BlogLayoutOne = ({ blog }) => {
                 height={blog.image.height}
                 width={blog.image.width}
                 className="w-full h-full object-center object-cover rounded-3xl group-hover:scale-105 transition-all ease duration-300"
+                size="(max-width: 1180px) 50vw, 33vw"
             />
             <div className="absolute bottom-0 p-6 xs:p-4 sm:p-10  z-20 w-full ">
                 <Tag

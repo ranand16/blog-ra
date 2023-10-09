@@ -10,6 +10,8 @@ const AboutCoverSection = () => {
                     src={profileCharacter}
                     alt={"Rishabh Anand"}
                     className="w-4/5 xs:w-3/4 md:w-full h-full object-contain object-center border-dark dark:border-light"
+                    priority
+                    size="(max-width: 768px) 100vw, (max-width: 1180px) 50vw, 50vw"
                 />
             </div>
             <div className="w-full md:w-1/2 flex flex-col text-left items-start justify-center px-5 xs:p-10 pb-10 lg:px-16">

@@ -10,11 +10,12 @@ const Logo = () => {
             href={"/"}
             className="flex items-center text-dark dark:text-light"
         >
-            <div className="w-12 md:w-16 rounded-full overflow-hidden border border-solid border-dark dark:border-light md:mr-4 mr-2">
+            <div className="w-12 md:w-16 rounded-full overflow-hidden border border-solid border-dark dark:border-gray md:mr-4 mr-2">
                 <Image
                     src={ProfileImage}
                     alt={"Rishabh Anand"}
                     className="w-full h-auto rounded-full "
+                    priority
                 />
             </div>
             <span className="font-bold text-lg md:text-xl dark:font-semibold">
