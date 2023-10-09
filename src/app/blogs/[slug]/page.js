@@ -6,7 +6,6 @@ import siteMetadata from "@/utils/siteMetaData";
 import { allBlogs } from "@pub/.contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
-// import { useState } from "react";
 
 export async function generateStaticParams() {
     return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -62,7 +61,6 @@ export default function BlogPage({ params }) {
     const blog = allBlogs.find(
         (blog) => blog._raw.flattenedPath == params.slug
     );
-    // const [showTOC, setShowTOC] = useState(true);
     return (
         <article>
             <div className="mb-8 text-center relative h-[70vh] bg-dark w-full">
@@ -72,11 +70,11 @@ export default function BlogPage({ params }) {
                         link={`/categories/${slug(blog.tags[0])}`}
                         className="px-6 text-sm py-2"
                     />
-                    <h1 className="inline-block mt-6 font-semibold capitalize text-light text-5xl leading-normal w-5/6 relative">
+                    <h1 className="inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl leading-normal w-5/6 relative">
                         {blog.title}
                     </h1>
                 </div>
-                <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 " />
+                <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 dark:bg-dark/40" />
                 <Image
                     src={blog.image.filePath.replace("../public", "")}
                     placeholder="blur"
@@ -88,7 +86,7 @@ export default function BlogPage({ params }) {
                 />
             </div>
             <BlogDetails blog={blog} slug={params.slug} />
-            <div className="grid grid-cols-12 gap-16 mt-8 px-10 ">
+            <div className="grid grid-cols-12 gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10 ">
                 <TableOfContents blog={blog} showTOC={true} />
                 <RenderMdx blog={blog} showTOC={true} />
             </div>

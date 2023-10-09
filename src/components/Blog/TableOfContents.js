@@ -2,8 +2,11 @@
 
 export function TableOfContents({ blog, showTOC }) {
     return (
-        <div className={`${showTOC ? "col-span-2" : "hidden"}`}>
-            <details open>
+        <div className={`${showTOC ? "col-span-12 lg:col-span-4" : "hidden"}`}>
+            <details
+                className="border-[1px] border-solid border-dark dark:border-light text-dark dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto"
+                open
+            >
                 <summary>Table Of Contents</summary>
                 <ul>
                     {blog.toc.map((heading) => {
@@ -12,7 +15,7 @@ export function TableOfContents({ blog, showTOC }) {
                                 <a
                                     href={`#${heading.slug}`}
                                     data-level={heading.level}
-                                    className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-dark/40 data-[level=three]:pl-6 flex items-center justify-start"
+                                    className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-dark/40 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 flex items-center justify-start"
                                 >
                                     {heading.level === "three" ? (
                                         <span className="flex w-1 h-1 rounded-full bg-dark mr-2">
