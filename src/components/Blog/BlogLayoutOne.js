@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { Overlay } from "../Elements/Overlay";
 import Image from "next/image";

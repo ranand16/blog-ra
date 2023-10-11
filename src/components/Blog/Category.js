@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils";
 import Link from "next/link";
 import { FC } from "react";

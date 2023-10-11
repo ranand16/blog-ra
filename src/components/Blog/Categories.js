@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import Category from "./Category";
 import { slug } from "github-slugger";
