@@ -22,7 +22,11 @@ const Header = () => {
             )}
         >
             <Logo />
-            <button className="inline-block sm:hidden z-50" onClick={toggle}>
+            <button
+                aria-label="menu items"
+                className="inline-block sm:hidden z-50"
+                onClick={toggle}
+            >
                 <div className="w-6 pointer transition-all ease duration-300">
                     <div className="relative">
                         <span
@@ -72,6 +76,7 @@ const Header = () => {
                     Contact
                 </Link>
                 <button
+                    aria-label="theme"
                     className={cn(
                         "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
                         mode == "light"
@@ -99,6 +104,7 @@ const Header = () => {
                     Contact
                 </Link>
                 <button
+                    aria-label="theme"
                     className={cn(
                         "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
                         mode == "light"
