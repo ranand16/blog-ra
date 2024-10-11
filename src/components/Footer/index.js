@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
             <div className="w-full mt-8 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
                 <span className="text-center ">
-                    &copy;2023 Rishabh Anand. All rights reserved.
+                    &copy;2024 Rishabh Anand. All rights reserved.
                 </span>
                 <Link
                     href="/sitemap.xml"

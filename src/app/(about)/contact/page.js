@@ -18,7 +18,15 @@ const Contact = () => {
                 <h2 className="font-bold capitalize text-2xl xs:text-3xl sm:text-4xl ">
                     Let's connect{" "}
                 </h2>
-                <ContactForm />
+                <div>
+                    <p>
+                        Contanct{" "}number:{" "}9886142140
+                    </p>
+                    <p>
+                        Email{" "}address:{" "}ranand16@gmail.com
+                    </p>
+                </div>
+                {/* <ContactForm /> */}
             </div>
         </section>
     );
