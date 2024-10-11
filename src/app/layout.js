@@ -56,7 +56,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    console.log("🚀 ~ file: layout.js:9 ~ allBlogs:", allBlogs);
 
     return (
         <html lang="en">

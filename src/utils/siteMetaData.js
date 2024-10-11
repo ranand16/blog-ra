@@ -10,8 +10,9 @@ const siteMetadata = {
     socialBanner: "/social-banner.png", // add social banner in the public folder
     email: "ranand16@gmail.com",
     github: "https://github.com/ranand16",
+    npm: "https://www.npmjs.com/~indian_soya_bean",
     youtube: "https://www.youtube.com/channel/UCuBikxYx6kBxTvY0AF24AxA",
-    linkedin: "https://www.linkedin.com/in/rishabh-anand-8b3b8197/",
+    linkedin: "https://www.linkedin.com/in/rishabh-anand-web-dev/",
     locale: "en-US",
 };
 
